@@ -58,12 +58,14 @@ export default {
       title: "Project 1",
       description: "Install the plugin and convert your designs...",
       github: "https://github.com/yourname/project1",
+      image: "/images/img.jpg",
       // ...
     },
     {
       title: "Project 2",
       description: "Install the plugin and convert your designs...",
       github: "https://github.com/yourname/project2",
+      image: "/images/img.jpg",
       // ...
     },
   ],
@@ -75,6 +77,8 @@ export default {
         "Graduated in 202X. Relevant coursework, achievements, or a short description can go here.",
       date: "Sep 2020 – June 2024", // optional
       tags: [{ label: "Linux", color: "bg-gray-800", textColor: "text-white" }],
+      image: "/images/img.jpg",
+      url: "https://www.google.com",
     },
     // ...
   ],
@@ -85,6 +89,7 @@ export default {
       description: "lorem ipsum dolor sit amet",
       date: "Sep 2020 – June 2024",
       tags: [{ label: "Linux", color: "bg-gray-800", textColor: "text-white" }],
+      image: "/images/img.jpg",
     },
     {
       title: "Software Engineer",
@@ -92,6 +97,8 @@ export default {
       description: "lorem ipsum dolor sit amet",
       date: "Sep 2020 – June 2024",
       tags: [{ label: "Linux", color: "bg-gray-800", textColor: "text-white" }],
+      url: "https://www.google.com",
+      image: "/images/img.jpg",
     },
   ],
 };

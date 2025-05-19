@@ -10,6 +10,8 @@ export default function InfoCard({
   link,
   linkText,
   tags = [],
+  image,
+  url,
 }) {
   return (
     <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-8 flex flex-col gap-4 relative overflow-hidden hover:bg-indigo-50">
@@ -17,7 +19,17 @@ export default function InfoCard({
         <div className="flex items-center gap-4">
           {/* Icon/avatar */}
           <div className="w-14 h-14 rounded-full bg-indigo-600 flex items-center justify-center">
-            {icon}
+            {image ? (
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={image}
+                  alt={title}
+                  className="w-full h-full object-cover rounded-xl"
+                />
+              </a>
+            ) : (
+              { icon }
+            )}
           </div>
           <div>
             <h3 className="text-2xl font-bold text-slate-800">{title}</h3>
