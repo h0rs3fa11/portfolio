@@ -1,14 +1,57 @@
-export default function InfoCard({ title, subtitle, description }) {
+import Tags from "./Tags";
+import { FaQuoteLeft } from "react-icons/fa";
+
+export default function InfoCard({
+  icon = <FaQuoteLeft className="text-white text-3xl" />, // 可自定义icon
+  title,
+  subtitle,
+  description,
+  date,
+  link,
+  linkText,
+  tags = [],
+}) {
   return (
-    <div className="flex flex-col bg-white md:flex-row items-center md:items-start gap-6 hover:bg-indigo-50 p-6 rounded-2xl shadow-md border border-slate-200 transition-colors duration-200">
-      {/* 图片占位 */}
-      <div className="w-full md:w-64 h-40 bg-gray-200 rounded-xl bg-[repeating-linear-gradient(135deg,_#e5e7eb_0px,_#e5e7eb_10px,_#d1d5db_10px,_#d1d5db_20px)] flex-shrink-0" />
-      {/* 内容 */}
-      <div className="flex-1 text-center md:text-left">
-        <h3 className="text-lg font-bold mb-1">{title}</h3>
-        {subtitle && <p className="text-gray-700 mb-1">{subtitle}</p>}
-        <p className="text-gray-600">{description}</p>
+    <div className="bg-white rounded-2xl shadow-md border border-slate-200 p-8 flex flex-col gap-4 relative overflow-hidden hover:bg-indigo-50">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+        <div className="flex items-center gap-4">
+          {/* Icon/avatar */}
+          <div className="w-14 h-14 rounded-full bg-indigo-600 flex items-center justify-center">
+            {icon}
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold text-slate-800">{title}</h3>
+            {subtitle && (
+              <div className="text-lg text-slate-600">{subtitle}</div>
+            )}
+          </div>
+        </div>
+        {/* 日期和链接 */}
+        <div className="flex flex-col items-end gap-1 min-w-[160px]">
+          {date && <div className="text-lg italic text-slate-500">{date}</div>}
+          {link && (
+            <a
+              href={link}
+              className="text-indigo-700 underline text-base hover:text-indigo-900"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {linkText || "View project"}
+            </a>
+          )}
+        </div>
       </div>
+      <div className="mt-2 text-slate-700 text-lg">{description}</div>
+      {/* 技能标签 */}
+      {tags.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-4">
+          {tags.map((tag, idx) => (
+            <Tags key={idx} {...tag}>
+              {tag.label}
+            </Tags>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
