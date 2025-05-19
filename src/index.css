@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Ancizar Sans', ui-sans-serif, system-ui, sans-serif;
+  font-size: 20px;
+}
