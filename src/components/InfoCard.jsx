@@ -18,19 +18,24 @@ export default function InfoCard({
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
         <div className="flex items-center gap-4">
           {/* Icon/avatar */}
-          <div className="w-14 h-14 rounded-full bg-indigo-600 flex items-center justify-center">
-            {image ? (
-              <a href={url} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={image}
-                  alt={title}
-                  className="w-full h-full object-cover rounded-xl"
-                />
-              </a>
-            ) : (
-              { icon }
-            )}
-          </div>
+          {image ? (
+            <a
+              className="w-14 h-14 rounded-full bg-indigo-600 flex items-center justify-center"
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src={image}
+                alt={title}
+                className="w-full h-full object-cover rounded-xl"
+              />
+            </a>
+          ) : (
+            <div className="w-14 h-14 rounded-full bg-indigo-600 flex items-center justify-center">
+              {icon}
+            </div>
+          )}
           <div>
             <h3 className="text-2xl font-bold text-slate-800">{title}</h3>
             {subtitle && (
