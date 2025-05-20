@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import { Typewriter } from "react-simple-typewriter";
 import config from "../portfolio.config";
 const iconMap = {
   github: <FaGithub size={24} />,
@@ -16,7 +17,14 @@ export default function Hero() {
       className="min-h-screen flex flex-col items-center justify-center py-16 text-center"
     >
       <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
-        {name}
+        <Typewriter
+          words={[name]}
+          cursor
+          cursorStyle="|"
+          typeSpeed={100}
+          deleteSpeed={50}
+          delaySpeed={1000}
+        />
       </h1>
       <p className="text-gray-600 mb-6">{description}</p>
       <div className="flex gap-3 justify-center">

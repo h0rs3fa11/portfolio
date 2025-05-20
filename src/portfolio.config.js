@@ -10,7 +10,7 @@ export default {
     ],
   },
   about: {
-    avatar: "/images/avatar.png",
+    avatar: "/images/me.JPG",
     title: "About me",
     paragraphs: [
       "lorem ipsum dolor sit amet",

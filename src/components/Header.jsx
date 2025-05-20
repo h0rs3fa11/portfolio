@@ -18,7 +18,9 @@ export default function Header() {
     <header className="w-full bg-white text-slate-800 sticky top-0 z-20">
       <div className="max-w-7xl w-full mx-auto flex items-center justify-between py-3 px-4 sm:px-8">
         {/* Logo */}
-        <span className="font-bold text-xl">🌎</span>
+        <a href="#hero" className="font-bold text-xl cursor-pointer">
+          🌎
+        </a>
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-8 text-base font-medium text-slate-800">
           {navLinks.map((link) => (
