@@ -20,7 +20,7 @@ export default function InfoCard({
           {/* Icon/avatar */}
           {image ? (
             <a
-              className="w-14 h-14 rounded-full bg-indigo-600 flex items-center justify-center"
+              className="w-14 h-14 rounded-full flex items-center justify-center"
               href={url}
               target="_blank"
               rel="noopener noreferrer"
