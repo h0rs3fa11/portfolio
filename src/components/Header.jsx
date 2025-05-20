@@ -2,11 +2,11 @@ import { useState } from 'react';
 import config from "../portfolio.config";
 
 const sectionMap = [
-  { key: "about", href: "#about" },
-  { key: "skills", href: "#skills" },
-  { key: "projects", href: "#projects" },
-  { key: "education", href: "#education" },
-  { key: "experience", href: "#experience" },
+  { key: "about", label: "About", href: "#about" },
+  { key: "skills", label: "Skills", href: "#skills" },
+  { key: "projects", label: "Projects", href: "#projects" },
+  { key: "education", label: "Education", href: "#education" },
+  { key: "experience", label: "Experience", href: "#experience" },
 ];
 
 export default function Header() {
@@ -29,7 +29,7 @@ export default function Header() {
               href={link.href}
               className="px-2 py-1 transition-colors hover:text-indigo-600"
             >
-              {link.key}
+              {link.label}
             </a>
           ))}
         </nav>
@@ -46,14 +46,15 @@ export default function Header() {
       </div>
       {/* Mobile Menu */}
       {menuOpen && (
-        <nav className="md:hidden px-4 pb-3 flex flex-col gap-2 bg-white border-t">
+        <nav className="md:hidden absolute top-full left-0 w-full px-4 pb-3 flex flex-col gap-2 bg-white border-t z-50 shadow">
           {navLinks.map((link) => (
             <a
-              key={link.name}
+              key={link.key}
               href={link.href}
               className="py-2 text-slate-800 hover:text-indigo-600 transition-colors"
+              onClick={() => setMenuOpen(false)}
             >
-              {link.name}
+              {link.label}
             </a>
           ))}
         </nav>
